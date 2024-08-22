@@ -27,7 +27,6 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                input 'Deploy to local directory?'
                 echo 'Deploying...'
                 bat 'xcopy /Y /I C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\JavaAppAutoDeploy\\JAVA-MAVEN\\target\\*.jar C:\\MYBUILDS\\'
             }
