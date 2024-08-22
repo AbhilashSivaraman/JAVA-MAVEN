@@ -10,7 +10,7 @@ pipeline {
             }
         }
 
-         stage('Clone Repo') {
+        stage('Clone Repo') {
             steps {
                 // Pull the code from Git repository (if applicable)
                 bat 'git clone https://github.com/AbhilashSivaraman/JAVA-MAVEN.git'
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 input 'Deploy to local directory?'
                 echo 'Deploying...'
-                bat 'xcopy /Y /I target\\*.jar C:\\MYBUILDS\\'
+                bat 'xcopy /Y /I C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\JavaAppAutoDeploy\\JAVA-MAVEN\\target\\*.jar C:\\MYBUILDS\\'
             }
         }
     }
