@@ -10,6 +10,13 @@ pipeline {
             }
         }
 
+         stage('Clone Repo') {
+            steps {
+                // Pull the code from Git repository (if applicable)
+                bat 'git clone https://github.com/AbhilashSivaraman/JAVA-MAVEN.git'
+            }
+        }
+
         stage('Build') {
             steps {
                 dir('JAVA-MAVEN') {
